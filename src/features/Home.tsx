@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Home = (props) => {
+const Home = () => {
   const classes = useStyles();
 
   return (
