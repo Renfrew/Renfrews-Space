@@ -16,6 +16,7 @@
   "plugins": [
     "prettier"
   ],
+  "ignorePatterns": ["config/", "scripts/"],
   "extends": [
     "react-app",
     "react-app/jest",
