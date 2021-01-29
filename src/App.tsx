@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Temporary until Material-UI has a stable version
-import { StylesProvider } from '@material-ui/core/styles';
+import StyledEngineProvider from '@material-ui/core/StyledEngineProvider';
 
 import Home from './features/Home';
 import NotFound404 from './features/NotFound404';
@@ -16,7 +16,7 @@ const routes = [
 
 function App() {
   return (
-    <StylesProvider injectFirst>
+    <StyledEngineProvider injectFirst>
       <CssBaseline />
       <Router>
         <Switch>
@@ -27,7 +27,7 @@ function App() {
           ))}
         </Switch>
       </Router>
-    </StylesProvider>
+    </StyledEngineProvider>
   );
 }
 
