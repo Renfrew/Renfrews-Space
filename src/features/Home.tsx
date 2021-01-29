@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Container from '@material-ui/core/Container';
+import { Container, Typography } from '@material-ui/core';
 
 import Shenzhen from './asserts/shenzhen-city-night-unsplash.jpg';
 
@@ -24,7 +24,13 @@ const Home = () => {
       disableGutters
       maxWidth={false}
       className={classes.container}
-    ></Container>
+    >
+      <Container maxWidth="sm">
+        <Typography>Renfrew</Typography>
+        <Typography>Renfrew</Typography>
+        <Typography>I am a programer, a technology enthusiast.</Typography>
+      </Container>
+    </Container>
   );
 };
 
