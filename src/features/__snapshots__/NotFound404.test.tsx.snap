@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the NotFound Page The NotFound page renders correctly 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg css-cnms5y-MuiContainer-root"
+>
+  <p>
+    Not Found
+  </p>
+</div>
+`;
