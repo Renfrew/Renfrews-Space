@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing the App The entired app renders correctly 1`] = `
+exports[`Testing the Home page The home page renders correctly 1`] = `
 <main
   className="MuiContainer-root MuiContainer-disableGutters makeStyles-container-1 css-q7bdj4-MuiContainer-root"
 >
