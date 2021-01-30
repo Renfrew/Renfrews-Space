@@ -7,11 +7,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import StyledEngineProvider from '@material-ui/core/StyledEngineProvider';
 
 import Home from './features/Home';
-import NotFound404 from './features/NotFound404';
+import Navigation from './features/Navigation';
 
 const routes = [
+  { path: '/:path', component: <Navigation /> },
   { path: '/', component: <Home /> },
-  { path: '*', component: <NotFound404 /> },
 ];
 
 function App() {
