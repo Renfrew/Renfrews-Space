@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -14,7 +14,7 @@ const routes = [
   { path: '/', component: <Home /> },
 ];
 
-function App() {
+function App(): ReactElement {
   return (
     <StyledEngineProvider injectFirst>
       <CssBaseline />

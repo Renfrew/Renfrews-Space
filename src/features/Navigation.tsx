@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from 'react';
+import React, { useState, SyntheticEvent, ReactElement } from 'react';
 import { Switch, Route, useParams, useHistory } from 'react-router-dom';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 
@@ -34,7 +34,7 @@ const useStyles = makeStyles(({}: Theme) =>
   })
 );
 
-export const NavigationBar = () => {
+export const NavigationBar = (): ReactElement => {
   const classes = useStyles();
   const { path } = useParams<PathPara>();
   const history = useHistory();
@@ -56,7 +56,7 @@ export const NavigationBar = () => {
   );
 };
 
-const Navigation = () => {
+const Navigation = (): ReactElement => {
   return (
     <React.Fragment>
       <NavigationBar />
