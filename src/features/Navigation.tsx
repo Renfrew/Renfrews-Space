@@ -46,7 +46,7 @@ export const NavigationBar = (): ReactElement => {
   }
 
   return (
-    <Paper className={classes.container}>
+    <Paper component="header" className={classes.container}>
       <Tabs centered value={selectedTab} onChange={onTabChange}>
         <Tab label="About me" value={Path.AboutMe} />
         <Tab label="Resume" value={Path.Resume} />
