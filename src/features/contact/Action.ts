@@ -1,6 +1,7 @@
 export enum ContactMeType {
   Name = 'name',
   Email = 'email',
+  Company = 'company',
   Website = 'website',
   Message = 'message',
 }
@@ -8,6 +9,7 @@ export enum ContactMeType {
 export interface ContactMeState {
   name: string;
   email: string;
+  company?: string;
   website?: string;
   message: string;
 }

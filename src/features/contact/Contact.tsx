@@ -16,8 +16,12 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
     header: {
       textAlign: 'center',
-      marginTop: spacing(10),
-      marginBottom: spacing(8),
+      marginTop: spacing(3),
+      marginBottom: spacing(3),
+      [breakpoints.up('md')]: {
+        marginTop: spacing(10),
+        marginBottom: spacing(8),
+      },
     },
     parent: {
       justifyContent: 'center',
@@ -66,7 +70,7 @@ const initialState = {
 const Contact = (): ReactElement => {
   const classes = useStyles();
 
-  const [{ name, email, website, message }, dispatch] = useReducer(
+  const [{ name, email, company, website, message }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -119,9 +123,9 @@ const Contact = (): ReactElement => {
             <TextField
               fullWidth
               margin="normal"
-              id={ContactMeType.Website}
-              label="Website"
-              value={website}
+              id={ContactMeType.Company}
+              label="Company Name"
+              value={company}
               onChange={onChange}
             />
           </Grid>
