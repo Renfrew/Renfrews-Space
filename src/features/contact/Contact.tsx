@@ -1,19 +1,23 @@
 import React, { useReducer, ReactElement } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
-import { Button, Container, Grid, Hidden, TextField } from '@material-ui/core';
+import {
+  Button,
+  Container,
+  Grid,
+  Hidden,
+  TextField,
+  Typography,
+} from '@material-ui/core';
 
 import { ContactMeType, thunk, reducer } from './Reducer';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
-    container: {
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
+    header: {
+      textAlign: 'center',
+      marginTop: spacing(10),
+      marginBottom: spacing(8),
     },
     parent: {
       justifyContent: 'center',
@@ -77,12 +81,10 @@ const Contact = (): ReactElement => {
   }
 
   return (
-    <Container
-      component="main"
-      disableGutters
-      maxWidth={false}
-      className={classes.container}
-    >
+    <Container component="main" disableGutters maxWidth={false}>
+      <Typography variant="h2" className={classes.header}>
+        Contact Me
+      </Typography>
       <Grid
         container
         component="form"
