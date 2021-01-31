@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 
@@ -45,7 +45,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   })
 );
 
-const Home = () => {
+const Home = (): ReactElement => {
   const classes = useStyles();
   const history = useHistory();
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 
 import { Button, Container, Grid, Typography } from '@material-ui/core';
@@ -40,9 +40,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   })
 );
 
-function onExploreClick() {}
-
-const Home = () => {
+const Home = (): ReactElement => {
   const classes = useStyles();
 
   return (
@@ -69,12 +67,7 @@ const Home = () => {
           About Me
         </Typography>
         <Grid className={classes.explore}>
-          <Button
-            onClick={onExploreClick}
-            variant="contained"
-            color="secondary"
-            size="large"
-          >
+          <Button variant="contained" color="secondary" size="large">
             Explore
           </Button>
         </Grid>

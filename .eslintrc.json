@@ -1,6 +1,9 @@
 {
   "settings": {
     "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
       "version": "detect"
     },
     "linkComponents": [
@@ -8,10 +11,17 @@
       {"name": "Link", "linkAttribute": "to"}
     ]
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "env": {
+    "es6": true,
+    "node": true
   },
   "plugins": [
     "prettier"
@@ -20,11 +30,18 @@
   "extends": [
     "react-app",
     "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
-    "plugin:react/recommended"
+    "prettier/react",
+    "prettier/prettier",
+    "prettier/@typescript-eslint"
   ],
   "rules": {
-    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}],
+    "prettier/prettier": ["warn", {"singleQuote": true}],
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
     "no-restricted-imports": [
       "error",
       {
