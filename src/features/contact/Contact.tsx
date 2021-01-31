@@ -1,4 +1,5 @@
-import React, { useReducer, ReactElement } from 'react';
+import React, { useReducer, ReactElement, FormEvent, useRef } from 'react';
+import emailjs from 'emailjs-com';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 import {
@@ -63,13 +64,14 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
 const initialState = {
   name: '',
   email: '',
+  company: '',
   website: '',
   message: '',
 };
 
 const Contact = (): ReactElement => {
   const classes = useStyles();
-
+  const form = useRef<HTMLFormElement>(null);
   const [{ name, email, company, website, message }, dispatch] = useReducer(
     reducer,
     initialState
@@ -78,10 +80,24 @@ const Contact = (): ReactElement => {
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     dispatch(thunk(event.target.id, event.target.value));
   }
-  function onSubmitClick(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) {
+
+  function onSubmitClick(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    console.warn(form);
+
+    const { REACT_APP_ID, REACT_APP_SERVICES } = process.env;
+    if (REACT_APP_ID && REACT_APP_SERVICES && form.current) {
+      emailjs.init(REACT_APP_ID);
+
+      emailjs.sendForm(REACT_APP_SERVICES, 'contact_form', form.current).then(
+        () => {
+          alert('Sent!');
+        },
+        (err) => {
+          alert(JSON.stringify(err));
+        }
+      );
+    }
   }
 
   return (
@@ -95,6 +111,8 @@ const Contact = (): ReactElement => {
         noValidate
         autoComplete="off"
         className={classes.parent}
+        onSubmit={onSubmitClick}
+        ref={form}
       >
         <Grid item xs={10} sm={7} md={5} className={classes.leftContainer}>
           <TextField
@@ -102,6 +120,7 @@ const Contact = (): ReactElement => {
             fullWidth
             margin="normal"
             id={ContactMeType.Name}
+            name={ContactMeType.Name}
             label="Name"
             value={name}
             onChange={onChange}
@@ -113,6 +132,7 @@ const Contact = (): ReactElement => {
             fullWidth
             margin="normal"
             id={ContactMeType.Email}
+            name={ContactMeType.Email}
             label="Email"
             value={email}
             onChange={onChange}
@@ -124,6 +144,7 @@ const Contact = (): ReactElement => {
               fullWidth
               margin="normal"
               id={ContactMeType.Company}
+              name={ContactMeType.Company}
               label="Company Name"
               value={company}
               onChange={onChange}
@@ -135,6 +156,7 @@ const Contact = (): ReactElement => {
             fullWidth
             margin="normal"
             id={ContactMeType.Website}
+            name={ContactMeType.Website}
             label="Website"
             value={website}
             onChange={onChange}
@@ -146,6 +168,7 @@ const Contact = (): ReactElement => {
             margin="normal"
             className={classes.textField}
             id={ContactMeType.Message}
+            name={ContactMeType.Message}
             label="Type your message here"
             multiline
             rows={5}
@@ -155,7 +178,7 @@ const Contact = (): ReactElement => {
         </Grid>
         <Grid item xs={12} sm={7} className={classes.sendButton}>
           <Button
-            onClick={onSubmitClick}
+            type="submit"
             variant="contained"
             color="secondary"
             size="large"
