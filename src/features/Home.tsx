@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import Shenzhen from './asserts/shenzhen-city-night-unsplash.jpg';
+import { Path } from './Constants';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
@@ -43,10 +45,13 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   })
 );
 
-function onExploreClick() {}
-
 const Home = () => {
   const classes = useStyles();
+  const history = useHistory();
+
+  function onExploreClick() {
+    history.push(Path.AboutMe);
+  }
 
   return (
     <Container
