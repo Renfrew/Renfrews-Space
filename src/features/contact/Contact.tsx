@@ -97,7 +97,6 @@ const Contact = (): ReactElement => {
             required
             fullWidth
             margin="normal"
-            // className={classes.textField}
             id={ContactMeType.Name}
             label="Name"
             value={name}
@@ -109,7 +108,6 @@ const Contact = (): ReactElement => {
             required
             fullWidth
             margin="normal"
-            // className={classes.textField}
             id={ContactMeType.Email}
             label="Email"
             value={email}
@@ -121,7 +119,6 @@ const Contact = (): ReactElement => {
             <TextField
               fullWidth
               margin="normal"
-              // className={classes.textField}
               id={ContactMeType.Website}
               label="Website"
               value={website}
@@ -133,7 +130,6 @@ const Contact = (): ReactElement => {
           <TextField
             fullWidth
             margin="normal"
-            // className={classes.textField}
             id={ContactMeType.Website}
             label="Website"
             value={website}
