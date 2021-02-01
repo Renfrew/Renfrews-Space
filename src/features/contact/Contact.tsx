@@ -22,6 +22,7 @@ import {
   ContactMeState,
   ContactMeType,
 } from './Reducer';
+import PersonalInfo from './Personal';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
@@ -32,6 +33,15 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         marginTop: spacing(10),
         marginBottom: spacing(8),
+      },
+    },
+    headerSendMessage: {
+      textAlign: 'center',
+      marginTop: spacing(3),
+      marginBottom: spacing(1),
+      [breakpoints.up('md')]: {
+        marginTop: spacing(10),
+        marginBottom: spacing(2),
       },
     },
     parent: {
@@ -121,6 +131,10 @@ const Contact = (): ReactElement => {
     <Container component="main" disableGutters maxWidth={false}>
       <Typography variant="h2" className={classes.header}>
         Contact Me
+      </Typography>
+      <PersonalInfo />
+      <Typography variant="h4" className={classes.headerSendMessage}>
+        Send Message
       </Typography>
       <Grid
         container
