@@ -3,15 +3,25 @@ import emailjs from 'emailjs-com';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 import {
+  Alert,
   Button,
   Container,
   Grid,
   Hidden,
+  Snackbar,
   TextField,
   Typography,
 } from '@material-ui/core';
 
-import { ContactMeType, thunk, reducer } from './Reducer';
+import {
+  changeForm,
+  sendSuccess,
+  sendError,
+  closeState,
+  reducer,
+  ContactMeState,
+  ContactMeType,
+} from './Reducer';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
@@ -61,40 +71,47 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   })
 );
 
-const initialState = {
+const initialState: ContactMeState = {
+  // Form value
   name: '',
   email: '',
   company: '',
   website: '',
   message: '',
+
+  // Used for the snackbar
+  feedback: '',
+  open: false,
+  severity: 'success',
 };
 
 const Contact = (): ReactElement => {
   const classes = useStyles();
   const form = useRef<HTMLFormElement>(null);
-  const [{ name, email, company, website, message }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [
+    { name, email, company, website, message, open, severity, feedback },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-    dispatch(thunk(event.target.id, event.target.value));
+    dispatch(changeForm(event.target.id, event.target.value));
   }
 
   function onSubmitClick(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.warn(form);
 
+    const canSend = name && email;
     const { REACT_APP_ID, REACT_APP_SERVICES } = process.env;
-    if (REACT_APP_ID && REACT_APP_SERVICES && form.current) {
+
+    if (canSend && REACT_APP_ID && REACT_APP_SERVICES && form.current) {
       emailjs.init(REACT_APP_ID);
 
       emailjs.sendForm(REACT_APP_SERVICES, 'contact_form', form.current).then(
         () => {
-          alert('Sent!');
+          dispatch(sendSuccess());
         },
         (err) => {
-          alert(JSON.stringify(err));
+          dispatch(sendError(`Error: ${err.status} - ${err.text}`));
         }
       );
     }
@@ -108,7 +125,6 @@ const Contact = (): ReactElement => {
       <Grid
         container
         component="form"
-        noValidate
         autoComplete="off"
         className={classes.parent}
         onSubmit={onSubmitClick}
@@ -132,6 +148,7 @@ const Contact = (): ReactElement => {
             fullWidth
             margin="normal"
             id={ContactMeType.Email}
+            type="email"
             name={ContactMeType.Email}
             label="Email"
             value={email}
@@ -157,6 +174,7 @@ const Contact = (): ReactElement => {
             margin="normal"
             id={ContactMeType.Website}
             name={ContactMeType.Website}
+            type="url"
             label="Website"
             value={website}
             onChange={onChange}
@@ -187,6 +205,15 @@ const Contact = (): ReactElement => {
           </Button>
         </Grid>
       </Grid>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => dispatch(closeState())}
+      >
+        <Alert onClose={() => dispatch(closeState())} severity={severity}>
+          {feedback}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };
