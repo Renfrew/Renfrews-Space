@@ -7,6 +7,7 @@ import { IconButton, Paper, Tab, Tabs } from '@material-ui/core';
 import space from './asserts/pexels-faaiq-ackmerd-1025469.jpg';
 import AboutMe from './aboutme/About';
 import Resume from './resume/About';
+import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 import NotFound404 from './NotFound404';
 
@@ -18,6 +19,7 @@ import linkedInIcon from './asserts/linkedIn.png';
 const routes = [
   { path: Path.AboutMe, component: <AboutMe /> },
   { path: Path.Resume, component: <Resume /> },
+  { path: Path.Projects, component: <Projects /> },
   { path: Path.Contact, component: <Contact /> },
   { path: Path.Unknown, component: <NotFound404 /> },
 ];
@@ -60,6 +62,7 @@ export const NavigationBar = (): ReactElement => {
       <Tabs centered value={selectedTab} onChange={onTabChange}>
         <Tab label="About me" value={Path.AboutMe} />
         <Tab label="Resume" value={Path.Resume} />
+        <Tab label="Projects" value={Path.Projects} />
         <Tab label="Contact" value={Path.Contact} />
       </Tabs>
       <IconButton
