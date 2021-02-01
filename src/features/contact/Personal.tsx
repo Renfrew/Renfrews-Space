@@ -43,7 +43,7 @@ const info: { label: string; value: string | number }[] = [
   },
   {
     label: 'Address',
-    value: 'Hamilton, ON. (can move)',
+    value: 'Hamilton, ON. (willing to move)',
   },
 ];
 
