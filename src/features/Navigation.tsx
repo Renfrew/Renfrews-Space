@@ -1,8 +1,8 @@
 import React, { useState, SyntheticEvent, ReactElement } from 'react';
 import { Switch, Route, useParams, useHistory } from 'react-router-dom';
-import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-import { Paper, Tab, Tabs } from '@material-ui/core';
+import { IconButton, Paper, Tab, Tabs } from '@material-ui/core';
 
 import space from './asserts/pexels-faaiq-ackmerd-1025469.jpg';
 import AboutMe from './aboutme/About';
@@ -12,6 +12,8 @@ import NotFound404 from './NotFound404';
 
 import { PathPara } from '../App.d';
 import { Path } from './Constants';
+import githubIcon from './asserts/GitHub-Mark-64px.png';
+import linkedInIcon from './asserts/linkedIn.png';
 
 const routes = [
   { path: Path.AboutMe, component: <AboutMe /> },
@@ -20,19 +22,27 @@ const routes = [
   { path: Path.Unknown, component: <NotFound404 /> },
 ];
 
-// eslint-disable-next-line no-empty-pattern
-const useStyles = makeStyles(({}: Theme) =>
-  createStyles({
-    container: {
+const useStyles = makeStyles({
+  container: {
+    flexGrow: 1,
+    backgroundImage: `url(${space})`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundBlendMode: 'difference',
+    display: 'flex',
+    alignItems: 'center',
+    '& > div': {
       flexGrow: 1,
-      backgroundImage: `url(${space})`,
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
-      backgroundBlendMode: 'difference',
     },
-  })
-);
+  },
+  linkedIcon: {
+    '& img': {
+      width: '32px',
+      height: '32px',
+    },
+  },
+});
 
 export const NavigationBar = (): ReactElement => {
   const classes = useStyles();
@@ -52,6 +62,22 @@ export const NavigationBar = (): ReactElement => {
         <Tab label="Resume" value={Path.Resume} />
         <Tab label="Contact" value={Path.Contact} />
       </Tabs>
+      <IconButton
+        component="a"
+        href="https://github.com/Renfrew/Renfrews-Space"
+        target="_blank"
+        className={classes.linkedIcon}
+      >
+        <img src={githubIcon} alt="GitHub Icon" />
+      </IconButton>
+      <IconButton
+        component="a"
+        href="https://www.linkedin.com/in/liang-chen-29642161/"
+        target="_blank"
+        className={classes.linkedIcon}
+      >
+        <img src={linkedInIcon} alt="LinkedIn Icon" />
+      </IconButton>
     </Paper>
   );
 };
