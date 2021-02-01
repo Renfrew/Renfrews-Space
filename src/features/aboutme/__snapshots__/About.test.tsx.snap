@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing About Page The NotFound page renders correctly 1`] = `
+<main
+  className="MuiContainer-root MuiContainer-disableGutters makeStyles-container-1 css-q7bdj4-MuiContainer-root"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiContainer-root MuiContainer-maxWidthSm makeStyles-parent-3 css-1vko90e-MuiGrid-root-MuiContainer-root"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-o2w69a-MuiTypography-root"
+    >
+      About Me
+    </h1>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-8ngd37-MuiGrid-root"
+    >
+      <h5
+        className="MuiTypography-root MuiTypography-h5 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial makeStyles-flip-2 css-ag7rrr-MuiTypography-root"
+      >
+        About Me
+      </h5>
+    </div>
+  </div>
+  <div
+    className="makeStyles-techStack-4"
+  >
+    <div
+      className="makeStyles-techStackLogo-5 css-1a8w37c"
+    >
+      <img
+        alt="HTML5 icon"
+        src="html5.png"
+      />
+    </div>
+    <div
+      className="makeStyles-techStackLogo-5 css-1a8w37c"
+    >
+      <img
+        alt="CSS icon"
+        src="css-512.png"
+      />
+    </div>
+    <div
+      className="makeStyles-techStackLogo-5 css-1a8w37c"
+    >
+      <img
+        alt="Javascript icon"
+        src="512px-JavaScript-logo.png"
+      />
+    </div>
+    <div
+      className="makeStyles-techStackLogo-5 css-1a8w37c"
+    >
+      <img
+        alt="Typescript icon"
+        src="typescript.png"
+      />
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 makeStyles-reactLogo-6 css-1ps6pg7-MuiPaper-root"
+    >
+      <img
+        alt="ReactLogo"
+        src="react.png"
+      />
+    </div>
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 makeStyles-reduxLogo-7 css-1ps6pg7-MuiPaper-root"
+    >
+      <img
+        alt="ReduxLogo"
+        src="Redux.png"
+      />
+    </div>
+    <div
+      className="makeStyles-techStackLogo-5 css-1a8w37c"
+    >
+      <img
+        alt="AWS Logo"
+        src="aws_icon_146074.png"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg makeStyles-mainContent-8 css-cnms5y-MuiContainer-root"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Welcome to my little home travaller. I really appreciate your coming.
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      I am a newbie who just graduated from Mohawk College.
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      But I already got a degree in mathematics from the University of Waterloo, which is equivalent to computer science.
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      I am a person who is very interested in technology.
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Not just programing, but also hardware.
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Such as Loading OpenWrt firmware into my router and write scripts on it.
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      In software aspect, I am currently developing a freelance website, which is customized for the team leader. He is a graduate major in design.
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      I have a certain talent for algorithms, data structures, and design patterns.
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      The most advanced CS courses I took are distribute system, security, and the computer network.
+    </p>
+    <br />
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Learning
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Enthusiasm
+    </p>
+    <br />
+    <p
+      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
+    >
+      Focus
+    </p>
+  </div>
+  <div
+    className="makeStyles-ending-9"
+  />
+</main>
+`;
