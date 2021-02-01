@@ -1,20 +1,33 @@
 import React, { ReactElement } from 'react';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
+
+import space from '../asserts/Mountains-Outer-Space-Wallpapers.jpg';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
     container: {
-      height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
+      minHeight: '100vh',
+      backgroundImage: `url(${space})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
+      backgroundBlendMode: 'difference',
+      backgroundAttachment: 'fixed',
+      // opacity: 0.9,
+      '& h1,h5,p': {
+        color: 'white',
+        mixBlendMode: 'difference',
+        filter: 'drop-shadow(.05em .05em #cf0c0c)',
+      },
+    },
+    flip: {
+      transform: `scale(1.1, -2)`,
     },
     parent: {
-      marginBottom: spacing(20),
+      paddingTop: spacing(8),
+      marginBottom: spacing(8),
       [breakpoints.down('sm')]: {
         paddingLeft: '10%',
       },
@@ -22,20 +35,21 @@ const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
         paddingLeft: breakpoints.values.sm * 0.1 + 'px',
       },
     },
-    text: {
-      color: 'white',
-      mixBlendMode: 'difference',
-      filter: 'drop-shadow(.05em .05em #cf0c0c)',
-    },
-    explore: {
+    mainContent: {
       textAlign: 'center',
-      marginTop: spacing(6),
+      maxWidth: '50%',
       [breakpoints.down('sm')]: {
-        marginRight: '10%',
+        maxWidth: '75%',
       },
       [breakpoints.up('sm')]: {
-        marginRight: breakpoints.values.sm * 0.1 + 'px',
+        fontSize: '1.5em',
       },
+      [breakpoints.up('lg')]: {
+        maxWidth: '33%',
+      },
+    },
+    ending: {
+      height: spacing(10),
     },
   })
 );
@@ -57,21 +71,57 @@ const Home = (): ReactElement => {
         maxWidth="sm"
         className={classes.parent}
       >
-        <Typography variant="h1" className={classes.text}>
+        <Typography variant="h1">About Me</Typography>
+        <Typography variant="h5" className={classes.flip}>
           About Me
         </Typography>
-        <Typography variant="h3" className={classes.text}>
-          (About Me)
-        </Typography>
-        <Typography variant="h6" className={classes.text}>
-          About Me
-        </Typography>
-        <Grid className={classes.explore}>
-          <Button variant="contained" color="secondary" size="large">
-            Explore
-          </Button>
-        </Grid>
       </Container>
+      <Container className={classes.mainContent}>
+        <Typography>
+          Welcome to my little home travaller. I really appreciate your coming.
+        </Typography>
+        <br />
+        <Typography>
+          I am a newbie who just graduated from Mohawk College.
+        </Typography>
+        <Typography>
+          But I already got a degree in mathematics from the University of
+          Waterloo.
+        </Typography>
+        <br />
+        <Typography>
+          I am a person who is very interested in technology.
+        </Typography>
+        <Typography>Not just programing, but also hardware.</Typography>
+        <Typography>
+          Such as Loading OpenWrt firmware into my router and write scripts on
+          it.
+        </Typography>
+        <br />
+        <Typography>
+          In software aspect, I am currently developing a freelance website,
+          which is customized for the team leader. He is a graduate major in
+          design.
+        </Typography>
+        <br />
+        <Typography>
+          I have a certain talent for algorithms, data structures, and design
+          patterns.
+        </Typography>
+        <br />
+        <Typography>
+          The most advanced CS courses I took are distribute system, security,
+          and the computer network.
+        </Typography>
+        <br />
+        <br />
+        <Typography>Learning</Typography>
+        <br />
+        <Typography>Enthusiasm</Typography>
+        <br />
+        <Typography>Focus</Typography>
+      </Container>
+      <div className={classes.ending}></div>
     </Container>
   );
 };
