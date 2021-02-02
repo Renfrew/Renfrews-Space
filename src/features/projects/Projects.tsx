@@ -21,6 +21,8 @@ import {
   Fab,
   Grid,
   IconButton,
+  ImageList,
+  ImageListItem,
   Typography,
 } from '@material-ui/core';
 
@@ -30,6 +32,9 @@ import PhotoCameraTwoToneIcon from '@material-ui/icons/PhotoCameraTwoTone';
 import myHeader from '../asserts/myProject.png';
 import macTech1 from '../asserts/macTech1.png';
 import githubIcon from '../asserts/GitHub-Mark-64px.png';
+import first from '../asserts/macTech1.png';
+import second from '../asserts/macTech2.png';
+import third from '../asserts/macTech3.png';
 
 const useStyles = makeStyles(
   ({ breakpoints, spacing, transitions, zIndex }: Theme) =>
@@ -86,8 +91,18 @@ const useStyles = makeStyles(
         zIndex: zIndex.drawer + 1,
         color: '#fff',
       },
+      imgLit: {
+        width: '500px',
+        height: '450px',
+      },
     })
 );
+
+const images: { img: string; title: string }[] = [
+  { img: first, title: 'home page' },
+  { img: second, title: 'chat page' },
+  { img: third, title: 'redux' },
+];
 
 const Projects = (): ReactElement => {
   const classes = useStyles();
@@ -193,6 +208,7 @@ const Projects = (): ReactElement => {
                       - Drawed Use Case Diagram, UML, and sometimes database
                       schema
                     </Typography>
+                    <Typography>- Practiced Agile Methodology</Typography>
                   </AccordionDetails>
                 </Accordion>
                 <Accordion>
@@ -205,14 +221,15 @@ const Projects = (): ReactElement => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
-                      - Language would be changed according to browser`&apos;`s
+                      - Language would be changed according to browser&apos;s
                       setting
                     </Typography>
                     <Typography>
                       - Global themes are in one file, so it is easy to manage
                     </Typography>
                     <Typography>
-                      - All API calls are in one folder, thanks to Redux Thunk
+                      - All API calls are in one folder and it is easy to manage
+                      the data structure
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -222,7 +239,15 @@ const Projects = (): ReactElement => {
               className={classes.backdrop}
               open={isBackdropOpened}
               onClick={closeBackdrop}
-            ></Backdrop>
+            >
+              <ImageList cols={1} gap={8} className={classes.imgLit}>
+                {images.map((item) => (
+                  <ImageListItem key={item.img}>
+                    <img srcSet={item.img} alt={item.title} />
+                  </ImageListItem>
+                ))}
+              </ImageList>
+            </Backdrop>
           </Card>
         </Grid>
       </Grid>
