@@ -67,7 +67,7 @@ export const NavigationBar = (): ReactElement => {
       </Tabs>
       <IconButton
         component="a"
-        href="https://github.com/Renfrew/Renfrews-Space"
+        href="https://github.com/Renfrew"
         target="_blank"
         className={classes.linkedIcon}
       >
