@@ -8,6 +8,7 @@ import {
   AccordionSummary,
   Avatar,
   Backdrop,
+  Button,
   Card,
   CardActions,
   CardActionArea,
@@ -16,6 +17,12 @@ import {
   CardMedia,
   Chip,
   Collapse,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Slide,
   Fab,
   IconButton,
   ImageList,
@@ -23,6 +30,7 @@ import {
   Typography,
 } from '@material-ui/core';
 
+import { TransitionProps } from '@material-ui/core/transitions';
 import ExpandMoreTwoToneIcon from '@material-ui/icons/ExpandMoreTwoTone';
 import PhotoCameraTwoToneIcon from '@material-ui/icons/PhotoCameraTwoTone';
 
@@ -84,10 +92,25 @@ const images: { img: string; title: string }[] = [
   { img: third, title: 'redux' },
 ];
 
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children?: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 const Projects = (): ReactElement => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   const [isBackdropOpened, setIsBackdropOpened] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [openGitHubDialog, setOpenGitHubDialog] = useState(false);
+
+  function onClickOpen() {
+    setOpenDialog(true);
+  }
 
   function handleExpandClick() {
     setExpanded(!expanded);
@@ -101,9 +124,27 @@ const Projects = (): ReactElement => {
     setIsBackdropOpened(false);
   }
 
+  function handleDialogClose() {
+    setOpenDialog(false);
+  }
+
+  function handleDialogGo() {
+    const win = window.open('http://renfrewworld.com/', '_blank');
+    win?.focus();
+    setOpenDialog(false);
+  }
+
+  function onGitHubClick() {
+    setOpenGitHubDialog(true);
+  }
+
+  function handleGitHubDialogClose() {
+    setOpenGitHubDialog(false);
+  }
+
   return (
     <Card className={classes.cardRoot}>
-      <CardActionArea>
+      <CardActionArea onClick={onClickOpen}>
         <CardHeader
           avatar={<Avatar aria-label="MacTech">M</Avatar>}
           title="MacTech"
@@ -137,7 +178,7 @@ const Projects = (): ReactElement => {
         >
           <ExpandMoreTwoToneIcon />
         </Fab>
-        <Fab aria-label="add">
+        <Fab aria-label="git hub" onClick={onGitHubClick}>
           <img
             src={githubIcon}
             alt="GitHub Icon"
@@ -189,6 +230,9 @@ const Projects = (): ReactElement => {
                 - All API calls are in one folder and it is easy to manage the
                 data structure
               </Typography>
+              <Typography>
+                - The login state is persistent between tabs
+              </Typography>
             </AccordionDetails>
           </Accordion>
         </CardContent>
@@ -206,6 +250,50 @@ const Projects = (): ReactElement => {
           ))}
         </ImageList>
       </Backdrop>
+      <Dialog
+        open={openDialog}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleDialogClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-slide-title">
+          {'Notifications about MacTech'}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            This website is still under implementation. Please use the following
+            credentials to login. <br /> Username: test <br /> Password: test
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose}>Cancel</Button>
+          <Button onClick={handleDialogGo}>Go</Button>
+        </DialogActions>
+      </Dialog>
+      <Dialog
+        open={openGitHubDialog}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleGitHubDialogClose}
+        aria-labelledby="alert-dialog-slide-title2"
+        aria-describedby="alert-dialog-slide-description2"
+      >
+        <DialogTitle id="alert-dialog-slide-title2">
+          {'Notifications about MacTech'}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description2">
+            This repository is private. Please send your github userme to me so
+            We can invite you to join our team. Our team would love to discuss
+            everything with you about this project.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleGitHubDialogClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
     </Card>
   );
 };
