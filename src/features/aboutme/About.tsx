@@ -153,28 +153,16 @@ const Home = (): ReactElement => {
       <TechStack />
       <Container className={classes.mainContent}>
         <Typography>
-          Welcome to my little home travaller. I really appreciate your coming.
-        </Typography>
-        <br />
-        <Typography>
-          I am a newbie who just graduated from Mohawk College.
-        </Typography>
-        <Typography>
-          But I already got a degree in mathematics from the University of
-          Waterloo, which is equivalent to computer science.
-        </Typography>
-        <br />
-        <Typography>
           I am a person who is very interested in technology.
         </Typography>
-        <Typography>Not just programing, but also hardware.</Typography>
+        <Typography>Not just programming, but also hardware.</Typography>
         <Typography>
           Such as Loading OpenWrt firmware into my router and write scripts on
           it.
         </Typography>
         <br />
         <Typography>
-          In software aspect, I am currently developing a freelance website,
+          In the software aspect, I am currently developing a freelance website,
           which is customized for the team leader. He is a graduate major in
           design.
         </Typography>
@@ -189,12 +177,12 @@ const Home = (): ReactElement => {
           and the computer network.
         </Typography>
         <br />
+        <Typography>
+          I just graduated from Mohawk College major in network system
+          technician, but I already got a degree in mathematics from the
+          University of Waterloo, which is equivalent to computer science.
+        </Typography>
         <br />
-        <Typography>Learning</Typography>
-        <br />
-        <Typography>Enthusiasm</Typography>
-        <br />
-        <Typography>Focus</Typography>
       </Container>
       <div className={classes.ending}></div>
     </Container>

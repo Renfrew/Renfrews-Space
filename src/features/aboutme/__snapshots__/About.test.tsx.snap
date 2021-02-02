@@ -88,29 +88,12 @@ exports[`Testing About Page The NotFound page renders correctly 1`] = `
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
     >
-      Welcome to my little home travaller. I really appreciate your coming.
-    </p>
-    <br />
-    <p
-      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
-    >
-      I am a newbie who just graduated from Mohawk College.
-    </p>
-    <p
-      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
-    >
-      But I already got a degree in mathematics from the University of Waterloo, which is equivalent to computer science.
-    </p>
-    <br />
-    <p
-      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
-    >
       I am a person who is very interested in technology.
     </p>
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
     >
-      Not just programing, but also hardware.
+      Not just programming, but also hardware.
     </p>
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
@@ -121,7 +104,7 @@ exports[`Testing About Page The NotFound page renders correctly 1`] = `
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
     >
-      In software aspect, I am currently developing a freelance website, which is customized for the team leader. He is a graduate major in design.
+      In the software aspect, I am currently developing a freelance website, which is customized for the team leader. He is a graduate major in design.
     </p>
     <br />
     <p
@@ -136,24 +119,12 @@ exports[`Testing About Page The NotFound page renders correctly 1`] = `
       The most advanced CS courses I took are distribute system, security, and the computer network.
     </p>
     <br />
-    <br />
     <p
       className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
     >
-      Learning
+      I just graduated from Mohawk College major in network system technician, but I already got a degree in mathematics from the University of Waterloo, which is equivalent to computer science.
     </p>
     <br />
-    <p
-      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
-    >
-      Enthusiasm
-    </p>
-    <br />
-    <p
-      className="MuiTypography-root MuiTypography-body1 MuiTypography-colorInitial MuiTypography-alignInherit MuiTypography-displayInitial css-ahj2mt-MuiTypography-root"
-    >
-      Focus
-    </p>
   </div>
   <div
     className="makeStyles-ending-9"
