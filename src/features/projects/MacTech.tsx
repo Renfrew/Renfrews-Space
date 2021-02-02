@@ -265,7 +265,7 @@ const Projects = (): ReactElement => {
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             This website is still under implementation. Please use the following
-            credentials to login. <br /> Username: test <br /> Password: test
+            credentials to log in. <br /> Username: test <br /> Password: test
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -286,9 +286,9 @@ const Projects = (): ReactElement => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description2">
-            This repository is private. Please send your github userme to me so
-            We can invite you to join our team. Our team would love to discuss
-            everything with you about this project.
+            This repository is private. Please send your GitHub username to me
+            so We can invite you to join our team. Our team would love to
+            discuss everything with you about this project.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
