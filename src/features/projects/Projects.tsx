@@ -6,6 +6,7 @@ import { Box, Container, Grid } from '@material-ui/core';
 import myHeader from '../asserts/myProject.png';
 import MacTech from './MacTech';
 import TheSpace from './TheSpace';
+import RefreshLoad from './RefreshLoad';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
@@ -46,6 +47,9 @@ const Projects = (): ReactElement => {
         </Grid>
         <Grid item>
           <TheSpace />
+        </Grid>
+        <Grid item>
+          <RefreshLoad />
         </Grid>
       </Grid>
     </Container>
