@@ -55,7 +55,7 @@ const useStyles = makeStyles(
       cardActions: {
         display: 'flex',
         justifyContent: 'center',
-        '& button': {
+        '& button,a': {
           marginLeft: spacing(1),
         },
         [breakpoints.up('sm')]: {
@@ -113,7 +113,11 @@ const Projects = (): ReactElement => {
 
   return (
     <Card className={classes.cardRoot}>
-      <CardActionArea>
+      <CardActionArea
+        component="a"
+        href="https://www.renfrew.me"
+        target="_blank"
+      >
         <CardHeader
           avatar={<Avatar aria-label="MacTech">M</Avatar>}
           title="Renfrew's Space"
@@ -145,7 +149,11 @@ const Projects = (): ReactElement => {
         >
           <ExpandMoreTwoToneIcon />
         </Fab>
-        <Fab aria-label="add">
+        <Fab
+          aria-label="add"
+          target="_blank"
+          href="https://github.com/Renfrew/Renfrews-Space"
+        >
           <img
             src={githubIcon}
             alt="GitHub Icon"
