@@ -5,6 +5,7 @@ import { Box, Container, Grid } from '@material-ui/core';
 
 import myHeader from '../asserts/myProject.png';
 import MacTech from './MacTech';
+import TheSpace from './TheSpace';
 
 const useStyles = makeStyles(({ breakpoints, spacing }: Theme) =>
   createStyles({
@@ -39,9 +40,12 @@ const Projects = (): ReactElement => {
       <Box className={classes.header}>
         <img src={myHeader} alt="My Project" />
       </Box>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" spacing={3}>
         <Grid item>
           <MacTech />
+        </Grid>
+        <Grid item>
+          <TheSpace />
         </Grid>
       </Grid>
     </Container>
