@@ -3,6 +3,7 @@ export enum Path {
   AboutMe = '/about',
   Resume = '/resume',
   Projects = '/projects',
+  Blogs = '/blogs',
   Contact = '/contact',
   Unknown = '*',
 }

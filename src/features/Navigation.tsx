@@ -9,6 +9,7 @@ import AboutMe from './aboutme/About';
 // import Resume from './resume/About';
 import Projects from './projects/Projects';
 import Contact from './contact/Contact';
+import Blogs from './blog/Blogs';
 import NotFound404 from './NotFound404';
 
 import { PathPara } from '../App.d';
@@ -20,6 +21,7 @@ const routes = [
   { path: Path.AboutMe, component: <AboutMe /> },
   // { path: Path.Resume, component: <Resume /> },
   { path: Path.Projects, component: <Projects /> },
+  { path: Path.Blogs, component: <Blogs /> },
   { path: Path.Contact, component: <Contact /> },
   { path: Path.Unknown, component: <NotFound404 /> },
 ];
@@ -63,6 +65,7 @@ export const NavigationBar = (): ReactElement => {
         <Tab label="About me" value={Path.AboutMe} />
         {/* <Tab label="Resume" value={Path.Resume} /> */}
         <Tab label="Projects" value={Path.Projects} />
+        <Tab label="Blogs" value={Path.Blogs} />
         <Tab label="Contact" value={Path.Contact} />
       </Tabs>
       <IconButton
