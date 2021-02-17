@@ -8,7 +8,6 @@
       "ESNext"
     ],
     "allowJs": true,
-    "jsx": "react-jsx",
     "declaration": true,
     "outDir": "./dist",
     "rootDir": "./src",
